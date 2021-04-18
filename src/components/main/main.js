@@ -7,30 +7,35 @@ import cart from '../cart/cart';
 const main = () => {
   console.log('main');
   const section = document.createElement('section');
+  const defaultTitle = document.createElement('h1');
+  const defaultText = 'lorem ipsum ....';
+  defaultTitle.innerHTML = defaultText;
+  section.append(defaultTitle);
   document.addEventListener('navigation', (e) => {
+    section.innerHTML = '';
     const {
       detail: { view },
     } = e;
     switch (view) {
-      case 'home':
-        section.empty().append(treatments());
+      case 'treatments':
+        section.append(treatments());
         break;
       case 'rooms':
-        section.empty().append(rooms());
+        section.append(rooms());
         break;
       case 'login':
-        section.empty().append(login());
+        section.append(login());
         break;
       case 'register':
-        section.empty().append(register());
+        section.append(register());
         break;
       case 'cart':
-        section.empty().append(cart());
+        section.append(cart());
         break;
       default:
-        section.empty().append('Coś poszło nie tak :-(');
+        section.append('Cos poszlo nie tak');
     }
-    return section;
   });
+  return section;
 };
 export default main;

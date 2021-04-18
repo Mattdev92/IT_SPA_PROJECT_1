@@ -1,7 +1,8 @@
 const rooms = function () {
   const fragment = document.createDocumentFragment();
-  const title = document.createElement('h1');
-  title.innerHTML = 'Available rooms';
+  const component = document.createElement('div');
+  component.innerHTML = 'Available rooms';
+  fragment.append(component);
   return fragment;
 };
 export default rooms;

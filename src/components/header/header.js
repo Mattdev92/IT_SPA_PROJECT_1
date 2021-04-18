@@ -1,8 +1,10 @@
 const header = () => {
-const fragment = document.createDocumentFragment();
-  const text =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quo autem quis cumque exercitationem sapiente fugit eaque ipsa impedit debitis, vero doloremque animi commodi iure saepe architecto qui aliquam totam.';
-fragment.append(text)
-    return fragment
+  console.log('title');
+  const fragment = document.createDocumentFragment();
+  const title = document.createElement('h1');
+  const text = 'SPA for Programmers';
+  title.innerHTML = text;
+  fragment.append(title);
+  return fragment;
 };
 export default header;
