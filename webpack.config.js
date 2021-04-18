@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: { index: './src/index.js', kontakt: './src/kontakt.js' },
+  entry: { index: './src/index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].bundle.js',
@@ -18,13 +18,6 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
       chunk: ['index'],
-      excludeChunks: ['kontakt'],
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/kontakt.html',
-      filename: 'kontakt.html',
-      chunk: ['kontakt'],
-      excludeChunks: ['index'],
     }),
   ],
   module: {
