@@ -1,10 +1,9 @@
 const header = () => {
-  console.log('title');
-  const fragment = document.createDocumentFragment();
+  const headerComponent = document.createElement('header');
   const title = document.createElement('h1');
   const text = 'SPA for Programmers';
   title.innerHTML = text;
-  fragment.append(title);
-  return fragment;
+  headerComponent.append(title);
+  return headerComponent;
 };
 export default header;

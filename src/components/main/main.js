@@ -5,35 +5,43 @@ import register from '../../views/register/register';
 import cart from '../cart/cart';
 
 const main = () => {
-  console.log('main');
   const section = document.createElement('section');
+  section.classList.add('section');
+
+  const emptySpace = document.createElement('div');
+  emptySpace.classList.add('section__empty');
+
+  const mainSection = document.createElement('div');
+  mainSection.classList.add('section__main');
+
   const defaultTitle = document.createElement('h1');
   const defaultText = 'lorem ipsum ....';
   defaultTitle.innerHTML = defaultText;
-  section.append(defaultTitle);
+  mainSection.append(defaultTitle);
+  section.append(emptySpace, mainSection);
   document.addEventListener('navigation', (e) => {
-    section.innerHTML = '';
+    mainSection.innerHTML = '';
     const {
       detail: { view },
     } = e;
     switch (view) {
       case 'treatments':
-        section.append(treatments());
+        mainSection.append(treatments());
         break;
       case 'rooms':
-        section.append(rooms());
+        mainSection.append(rooms());
         break;
       case 'login':
-        section.append(login());
+        mainSection.append(login());
         break;
       case 'register':
-        section.append(register());
+        mainSection.append(register());
         break;
       case 'cart':
-        section.append(cart());
+        mainSection.append(cart());
         break;
       default:
-        section.append('Cos poszlo nie tak');
+        mainSection.append('Cos poszlo nie tak');
     }
   });
   return section;
