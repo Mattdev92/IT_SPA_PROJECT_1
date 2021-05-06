@@ -4,30 +4,50 @@ import massage from '../../assets/massage.jpg';
 import madMassage from '../../assets/madMassage.jpg';
 import faceMassage from '../../assets/faceMassage.jpg';
 import waterExercises from '../../assets/waterExercises.jpg';
+import manicure from '../../assets/manicure.jpg';
+import pedicure from '../../assets/pedicure.jpg';
+import coffee from '../../assets/coffee.jpg';
+import loaderComponent from '../../components/loader/loader';
 
-axios
-  .get('http://localhost:3000/treatments')
-  .then((data) => {
-    // handle success
-    console.log(data);
-  })
-  .catch((error) => {
-    // handle error
-    console.log(error);
-  });
 const treatments = function () {
   const wrapper = document.createElement('div');
+  const scrollTo = document.querySelector('.section__main');
+  const nav = document.querySelector('.nav');
+  nav.classList.add('nav__sectionView');
   wrapper.classList.add('treatments');
-  // const text = 'All treatments';
-  // wrapper.innerHTML = text;
-  const imageTab = [massage, madMassage, faceMassage, waterExercises];
-  const textTab = [
-    'usuall relaxing massage',
-    ' mad relaxing massage',
-    'face massage',
-    'water exercises',
+  const title = document.createElement('h1');
+  title.classList.add('treatments_title');
+  title.innerText = 'Available treatments';
+  scrollTo.append(title);
+  wrapper.append(loaderComponent());
+  const imageTab = [
+    massage,
+    madMassage,
+    faceMassage,
+    waterExercises,
+    manicure,
+    pedicure,
+    coffee,
   ];
-  imageTab.map((item, i) => wrapper.append(Card(item, textTab[i])));
+  axios
+    .get('http://localhost:3000/treatments')
+    .then((data) => {
+      scrollTo.scrollIntoView({
+        behavior: 'smooth',
+      });
+      return data;
+    })
+    .then(({ data }) => {
+      setTimeout(() => {
+        imageTab.map((item, i) => wrapper.append(Card(item, data[i].name)));
+        const loader = document.querySelector('.treatments-loader');
+        loader.remove();
+      }, 1000);
+    })
+    .catch((error) => {
+      wrapper.append('No connection with database');
+      console.log(error);
+    });
   return wrapper;
 };
 export default treatments;

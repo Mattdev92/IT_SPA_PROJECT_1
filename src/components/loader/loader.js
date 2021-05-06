@@ -1,8 +1,12 @@
-const loaderComponent = () => {
+const loaderComponent = (prop) => {
   const loader = document.createElement('div');
   loader.classList.add('clearfix');
   loader.classList.add('justify-content-center');
-  loader.classList.add('custom-loader');
+  if (prop === 'main') {
+    loader.classList.add('custom-loader');
+  } else {
+    loader.classList.add('treatments-loader');
+  }
 
   const spinner = document.createElement('div');
   spinner.classList.add('spinner-border');

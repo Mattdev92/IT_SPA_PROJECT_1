@@ -16,7 +16,7 @@ const Card = (imageUrl, someText) => {
   paragraph.innerText = someText;
 
   textWrapper.append(paragraph);
-  cardWrapper.append(cardImage, textWrapper);
+  cardImage.onload = () => cardWrapper.append(cardImage, textWrapper);
 
   return cardWrapper;
 };

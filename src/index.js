@@ -9,7 +9,7 @@ import loaderComponent from './components/loader/loader';
 document.addEventListener('DOMContentLoaded', () => {
   console.log('content loaded');
   const root = document.querySelector('#root');
-  root.append(loaderComponent());
+  root.append(loaderComponent('main'));
   root.append(carouselComponent());
   setTimeout(() => {
     root.append(navigation(), header(), main(), footer());
