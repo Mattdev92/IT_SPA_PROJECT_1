@@ -12,6 +12,10 @@ const rooms = function () {
   const nav = document.querySelector('.nav');
   nav.classList.add('nav__sectionView');
   wrapper.classList.add('treatments');
+  const title = document.createElement('h1');
+  title.classList.add('sectionView_title');
+  title.innerText = 'Available Rooms';
+  scrollTo.append(title);
   wrapper.append(loaderComponent());
   const imageTab = [room1, room2, room3, room4];
   axios

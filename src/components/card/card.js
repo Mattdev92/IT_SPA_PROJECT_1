@@ -16,8 +16,10 @@ const Card = (imageUrl, someText) => {
   paragraph.innerText = someText;
 
   textWrapper.append(paragraph);
-  cardImage.onload = () => cardWrapper.append(cardImage, textWrapper);
-
+  const button = document.createElement('button');
+  button.classList.add('button');
+  button.innerText = 'Show more';
+  cardImage.onload = () => cardWrapper.append(cardImage, textWrapper, button);
   return cardWrapper;
 };
 export default Card;

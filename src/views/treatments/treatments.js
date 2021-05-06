@@ -16,7 +16,7 @@ const treatments = function () {
   nav.classList.add('nav__sectionView');
   wrapper.classList.add('treatments');
   const title = document.createElement('h1');
-  title.classList.add('treatments_title');
+  title.classList.add('sectionView_title');
   title.innerText = 'Available treatments';
   scrollTo.append(title);
   wrapper.append(loaderComponent());

@@ -10,6 +10,15 @@ const createNavigationEvent = (view) =>
 const navigation = () => {
   const logo = new Image();
   logo.src = Logo;
+  logo.addEventListener('click', () => {
+    const top = document.querySelector('body');
+    top.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+    const nav = document.querySelector('.nav');
+    nav.classList.remove('nav__sectionView');
+  });
   logo.classList.add('logo');
   const nav = document.createElement('nav');
   nav.classList.add('nav');
