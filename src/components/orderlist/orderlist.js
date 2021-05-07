@@ -76,7 +76,7 @@ const OrderList = (keys) => {
     roomsWrapper.innerText = '';
     wrapper.append('Your Cart is empty :(');
   });
-  clearButton.innerText = 'clear Cart';
+  clearButton.innerText = 'Clear Cart';
   wrapper.append(roomsWrapper, treatmentsWrapper, clearButton);
   return wrapper;
 };

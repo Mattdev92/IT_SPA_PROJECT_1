@@ -47,6 +47,11 @@ const treatments = function () {
       }, 1500);
     })
     .catch((error) => {
+      scrollTo.scrollIntoView({
+        behavior: 'smooth',
+      });
+      const loader = document.querySelector('.treatments-loader');
+      loader.remove();
       wrapper.append('No connection with database');
       console.log(error);
     });
