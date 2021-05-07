@@ -1,7 +1,7 @@
 import loaderComponent from '../loader/loader';
 import Detail from '../../views/details/details';
 
-const Card = (imageUrl, objectData) => {
+const Card = (imageUrl, objectData, type) => {
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add('card');
   cardWrapper.classList.add('card__custom');
@@ -26,7 +26,7 @@ const Card = (imageUrl, objectData) => {
     const section = document.querySelector('.section__main');
     section.innerHTML = '';
     section.append(loaderComponent());
-    Detail(section, objectData, imageUrl);
+    Detail(section, objectData, imageUrl, type);
   });
   cardImage.onload = () => cardWrapper.append(cardImage, textWrapper, button);
   return cardWrapper;

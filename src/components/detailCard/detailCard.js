@@ -1,4 +1,4 @@
-const detailCard = (imageUrl, objectData) => {
+const detailCard = (imageUrl, objectData, type) => {
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add('card');
   cardWrapper.classList.add('detailCard__custom');
@@ -17,17 +17,19 @@ const detailCard = (imageUrl, objectData) => {
 
   const paragraph2 = document.createElement('p');
   paragraph2.classList.add('card-text');
-  paragraph2.innerText = objectData.description;
-
-  textWrapper.append(paragraph);
-  textWrapper.append(paragraph2);
-
+  if (type === 'rooms') {
+    paragraph2.innerText = objectData.description;
+  } else {
+    paragraph2.innerText = `Estimated time: ${objectData.time} min`;
+  }
+  textWrapper.append(paragraph, paragraph2, `Price: ${objectData.price} euro`);
   const button = document.createElement('button');
   button.classList.add('button');
   button.innerText = 'Add to cart';
   button.addEventListener('click', () => {
-    const section = document.querySelector('.section__main');
-    section.innerHTML = '';
+    localStorage.setItem(`${type}:${objectData.id}`, objectData.id);
+    button.classList.add('button--disabled');
+    button.innerText = 'In cart';
   });
   cardImage.onload = () => cardWrapper.append(cardImage, textWrapper, button);
   return cardWrapper;

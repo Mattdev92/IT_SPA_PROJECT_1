@@ -28,10 +28,10 @@ const rooms = function () {
     })
     .then(({ data }) => {
       setTimeout(() => {
-        imageTab.map((item, i) => wrapper.append(Card(item, data[i])));
+        imageTab.map((item, i) => wrapper.append(Card(item, data[i], 'rooms')));
         const loader = document.querySelector('.treatments-loader');
         loader.remove();
-      }, 1000);
+      }, 1500);
     })
     .catch((error) => {
       wrapper.append('No connection with database');
