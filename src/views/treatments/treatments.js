@@ -39,7 +39,7 @@ const treatments = function () {
     })
     .then(({ data }) => {
       setTimeout(() => {
-        imageTab.map((item, i) => wrapper.append(Card(item, data[i].name)));
+        imageTab.map((item, i) => wrapper.append(Card(item, data[i])));
         const loader = document.querySelector('.treatments-loader');
         loader.remove();
       }, 1000);

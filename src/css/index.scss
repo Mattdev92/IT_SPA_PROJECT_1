@@ -94,6 +94,10 @@ header {
     width: 100vw;
   }
   &__main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     width: 100vw;
   }
@@ -107,9 +111,11 @@ header {
   justify-items: center;
   gap: 10px;
 }
-
 .card__custom {
   width: 20rem;
+}
+.detailCard__custom{
+  width: 40rem;
 }
 footer {
   margin-top: 20px;
