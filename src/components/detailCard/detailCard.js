@@ -10,19 +10,14 @@ const detailCard = (imageUrl, objectData, type) => {
 
   const textWrapper = document.createElement('div');
   textWrapper.classList.add('card-body');
-
   const paragraph = document.createElement('p');
   paragraph.classList.add('card-text');
-  paragraph.innerText = objectData.name;
-
-  const paragraph2 = document.createElement('p');
-  paragraph2.classList.add('card-text');
   if (type === 'rooms') {
-    paragraph2.innerText = objectData.description;
+    paragraph.innerText = objectData.description;
   } else {
-    paragraph2.innerText = `Estimated time: ${objectData.time} min`;
+    paragraph.innerText = `Estimated time: ${objectData.time} min`;
   }
-  textWrapper.append(paragraph, paragraph2, `Price: ${objectData.price} euro`);
+  textWrapper.append(paragraph, `Price: ${objectData.price} PLN`);
   const button = document.createElement('button');
   button.classList.add('button');
   button.innerText = 'Add to cart';

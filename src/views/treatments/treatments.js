@@ -44,7 +44,7 @@ const treatments = function () {
         );
         const loader = document.querySelector('.treatments-loader');
         loader.remove();
-      }, 1500);
+      }, 800);
     })
     .catch((error) => {
       scrollTo.scrollIntoView({

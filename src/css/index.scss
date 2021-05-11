@@ -94,7 +94,7 @@ header {
     width: 100vw;
   }
   &__main {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -114,7 +114,7 @@ header {
 .card__custom {
   width: 20rem;
 }
-.detailCard__custom{
+.detailCard__custom {
   width: 40rem;
 }
 footer {
@@ -149,7 +149,7 @@ footer {
   font-family: 'Kaushan Script', cursive;
   font-size: 1rem;
   &:hover {
-    color:green;
+    color: green;
     background-color: white;
     border: 1px solid black;
     transition: all 0.5s ease-in-out;
@@ -163,6 +163,112 @@ footer {
   font-family: 'Kaushan Script', cursive;
   font-size: 1rem;
   &:hover {
-    color:grey;
+    color: grey;
   }
+}
+.orderWrapper {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sumInfo {
+  padding: 30px;
+  display: block;
+  justify-content: center;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.5rem;
+}
+.btn-remove-custom {
+  margin: 0 20px;
+}
+.btn-clear-custom {
+  margin: 30px;
+}
+
+.li-custom {
+  width: 500px;
+}
+.cartTitle {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2rem;
+}
+.cartWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quantity {
+  margin: 0 10px;
+  width: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.spanWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.infoWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.mainwrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  &__imagePlace {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 50vw;
+    img {
+      height: 80vh;
+      width: auto;
+    }
+  }
+  &__descriptionPlace {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: left;
+    flex-direction: column;
+    min-height: 60vh;
+    width: 30vw;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.3rem;
+    text-align: justify;
+  }
+}
+.titleDetail {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2rem;
+  margin: 40px;
+}
+.spanWrapperDescription {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    margin: 10px;
+  }
+}
+.tableName {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.3rem;
 }

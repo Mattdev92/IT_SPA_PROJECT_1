@@ -31,7 +31,7 @@ const rooms = function () {
         imageTab.map((item, i) => wrapper.append(Card(item, data[i], 'rooms')));
         const loader = document.querySelector('.treatments-loader');
         loader.remove();
-      }, 1500);
+      }, 800);
     })
     .catch((error) => {
       wrapper.append('No connection with database');

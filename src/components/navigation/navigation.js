@@ -18,6 +18,7 @@ const navigation = () => {
     });
     const nav = document.querySelector('.nav');
     nav.classList.remove('nav__sectionView');
+    document.dispatchEvent(createNavigationEvent('defaultview'));
   });
   logo.classList.add('logo');
   const nav = document.createElement('nav');

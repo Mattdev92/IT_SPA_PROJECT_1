@@ -7,7 +7,7 @@ const Card = (imageUrl, objectData, type) => {
   cardWrapper.classList.add('card__custom');
 
   const cardImage = new Image();
-  cardImage.src = imageUrl;
+
   cardImage.classList.add('card-img-top');
   cardImage.classList.add('card-img-top_custom');
 
@@ -28,7 +28,11 @@ const Card = (imageUrl, objectData, type) => {
     section.append(loaderComponent());
     Detail(section, objectData, imageUrl, type);
   });
-  cardImage.onload = () => cardWrapper.append(cardImage, textWrapper, button);
+  cardImage.src = imageUrl;
+  cardImage.onload = () => {
+    cardWrapper.append(cardImage, textWrapper, button);
+  };
+
   return cardWrapper;
 };
 export default Card;
