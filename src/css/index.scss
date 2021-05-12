@@ -141,6 +141,15 @@ footer {
     cursor: pointer;
   }
 }
+.cart {
+  display: inline-block;
+  margin: 10px;
+  width: 40px;
+  height: auto;
+  &:hover {
+    cursor: pointer;
+  }
+}
 .button {
   background-color: green;
   border-radius: 5px;
@@ -191,10 +200,18 @@ footer {
   width: 500px;
 }
 .cartTitle {
+  margin: 30px;
   font-family: 'Kaushan Script', cursive;
   font-size: 2rem;
 }
 .cartWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dateWrapper {
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -271,4 +288,10 @@ footer {
 .tableName {
   font-family: 'Kaushan Script', cursive;
   font-size: 1.3rem;
+}
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }

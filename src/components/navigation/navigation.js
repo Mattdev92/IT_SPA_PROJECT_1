@@ -1,4 +1,5 @@
 import Logo from '../../assets/logo.png';
+import Cart from '../../assets/cart.png';
 
 const createNavigationEvent = (view) =>
   new CustomEvent('navigation', {
@@ -26,7 +27,10 @@ const navigation = () => {
   const ul = document.createElement('ul');
   ul.classList.add('nav__list');
   nav.append(logo);
-  const navigationElements = ['treatments', 'rooms', 'cart'];
+  const cart = new Image();
+  cart.src = Cart;
+  cart.classList.add('cart');
+  const navigationElements = ['treatments', 'rooms'];
   navigationElements.map((item) => {
     const liElement = document.createElement('li');
     liElement.classList.add('nav__list__item');
@@ -38,7 +42,10 @@ const navigation = () => {
     document.dispatchEvent(createNavigationEvent(e.target.innerHTML));
     e.preventDefault();
   });
-  nav.append(ul);
+  cart.addEventListener('click', () => {
+    document.dispatchEvent(createNavigationEvent('cart'));
+  });
+  nav.append(ul, cart);
   return nav;
 };
 export default navigation;
