@@ -20,14 +20,7 @@ const Description = (wrapper, type) => {
 
   const spanWrapper = document.createElement('div');
   spanWrapper.classList.add('spanWrapperDescription');
-  if (type === 'Your room/s') {
-    const date = document.createElement('span');
-    date.innerText = 'Date';
-    spanWrapper.append(span, quantity, removeButton, date);
-  } else {
-    spanWrapper.append(span, quantity, removeButton);
-  }
-
+  spanWrapper.append(span, quantity, removeButton);
   li.append(name, spanWrapper);
   wrapper.append(li);
 };

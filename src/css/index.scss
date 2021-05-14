@@ -295,3 +295,11 @@ footer {
   justify-content: space-evenly;
   align-items: center;
 }
+.cartSummary {
+  position: absolute;
+  height: auto;
+  width: 200px;
+  top: 70px;
+  left: 80vw;
+  background-color: rgba(105, 17, 17, 0.281);
+}

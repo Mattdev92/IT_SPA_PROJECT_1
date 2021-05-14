@@ -31,6 +31,7 @@ const navigation = () => {
   cart.src = Cart;
   cart.classList.add('cart');
   const navigationElements = ['treatments', 'rooms'];
+  const cartSummary = document.createElement('div');
   navigationElements.map((item) => {
     const liElement = document.createElement('li');
     liElement.classList.add('nav__list__item');
@@ -44,6 +45,32 @@ const navigation = () => {
   });
   cart.addEventListener('click', () => {
     document.dispatchEvent(createNavigationEvent('cart'));
+  });
+  cart.addEventListener('mouseover', () => {
+    const list = document.createElement('ul');
+    list.classList.add('list-group');
+    const keys = Object.keys(localStorage);
+
+    keys.forEach((item) => {
+      const itemInCourt = localStorage.getItem(item);
+      const li = document.createElement('li');
+      li.classList.add('list-group-item');
+      li.classList.add('itemInCourt');
+      if (item.includes('room')) {
+        li.innerText = `Room number ${itemInCourt}`;
+      } else {
+        li.innerText = `Treatment number ${itemInCourt}`;
+      }
+      list.append(li);
+    });
+
+    cartSummary.classList.add('cartSummary');
+    cartSummary.appendChild(list);
+    nav.append(cartSummary);
+  });
+  cart.addEventListener('mouseleave', () => {
+    cartSummary.innerText = '';
+    nav.removeChild(cartSummary);
   });
   nav.append(ul, cart);
   return nav;
