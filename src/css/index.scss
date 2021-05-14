@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import '~bootstrap/scss/bootstrap';
+// General styles
 *,
 *:before,
 *:after {
@@ -9,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
 }
+//Navigation styles
 .nav {
   display: block;
   z-index: 999;
@@ -40,6 +42,9 @@ body {
       cursor: pointer;
       font-family: 'Kaushan Script', cursive;
       font-size: 1.5rem;
+      @media (min-width: 1100px) and (max-width: 1500px) {
+        font-size: 2rem;
+      }
     }
   }
 }
@@ -54,83 +59,6 @@ body {
 .nav__list__item:hover::before {
   width: 70px;
   transition: width 0.3s ease-in-out;
-}
-.custom_carousel_slider {
-  width: 100vw;
-  height: 100vh;
-}
-#myCarousel {
-  position: absolute;
-  top: 0;
-}
-.custom-loader {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-}
-.treatments-loader {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-family: 'Kaushan Script', cursive;
-  font-size: 3rem;
-}
-.section {
-  display: block;
-  &__empty {
-    height: 95vh;
-    width: 100vw;
-  }
-  &__main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100vw;
-  }
-}
-.treatments {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-self: center;
-  justify-content: center;
-  justify-items: center;
-  gap: 10px;
-}
-.card__custom {
-  width: 20rem;
-}
-.detailCard__custom {
-  width: 40rem;
-}
-footer {
-  margin-top: 20px;
-  display: flex;
-  height: 15vh;
-  color: white;
-  background-color: black;
-  justify-content: center;
-  align-items: center;
-}
-.sectionView_title {
-  margin: 20px;
-  text-align: center;
-  font-family: 'Kaushan Script', cursive;
-  font-size: 2rem;
 }
 .logo {
   display: inline-block;
@@ -149,6 +77,90 @@ footer {
   &:hover {
     cursor: pointer;
   }
+}
+.cartSummary {
+  position: absolute;
+  height: auto;
+  width: 200px;
+  top: 70px;
+  left: 80vw;
+  background-color: rgba(105, 17, 17, 0.281);
+}
+//Carousel styles
+.custom_carousel_slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+#myCarousel {
+  position: absolute;
+  top: 0;
+}
+//Loader styles
+.custom-loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+}
+.grid-loader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// Main page Title styles
+header {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 3rem;
+}
+//Main section styles
+.section {
+  display: block;
+  &__empty {
+    height: 95vh;
+    width: 100vw;
+  }
+  &__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+  }
+}
+// Treatments and rooms view styles
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-self: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 10px;
+}
+// Card styles
+.card__custom {
+  width: 20rem;
+}
+//Detail view styles
+.detailCard__custom {
+  width: 40rem;
+}
+.sectionView_title {
+  margin: 20px;
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2rem;
 }
 .button {
   background-color: green;
@@ -175,6 +187,17 @@ footer {
     color: grey;
   }
 }
+//Footer styles
+footer {
+  margin-top: 20px;
+  display: flex;
+  height: 15vh;
+  color: white;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+// Cart view styles
 .orderWrapper {
   min-height: 70vh;
   display: flex;
@@ -195,7 +218,6 @@ footer {
 .btn-clear-custom {
   margin: 30px;
 }
-
 .li-custom {
   width: 500px;
 }
@@ -234,7 +256,9 @@ footer {
   justify-content: center;
   align-items: flex-start;
 }
-.mainwrapper {
+
+// Default view in main section styles
+.mainWrapper {
   margin: 0;
   padding: 0;
   display: flex;
@@ -251,9 +275,16 @@ footer {
     align-items: center;
     height: 60vh;
     width: 50vw;
+    @media (min-width: 1100px) and (max-width: 1500px) {
+      align-items: flex-start;
+    }
     img {
       height: 80vh;
       width: auto;
+      @media (min-width: 1100px) and (max-width: 1500px) {
+        height: 50vh;
+        width: auto;
+      }
     }
   }
   &__descriptionPlace {
@@ -295,11 +326,5 @@ footer {
   justify-content: space-evenly;
   align-items: center;
 }
-.cartSummary {
-  position: absolute;
-  height: auto;
-  width: 200px;
-  top: 70px;
-  left: 80vw;
-  background-color: rgba(105, 17, 17, 0.281);
-}
+
+

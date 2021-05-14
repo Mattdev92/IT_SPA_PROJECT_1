@@ -1,12 +1,12 @@
 import detailCard from '../../components/detailCard/detailCard';
 
 const Detail = function (section, objectData, imageUrl, type) {
-  console.log('From Detail componnent');
-  const loader = document.querySelector('.treatments-loader');
+  // Create title
   const title = document.createElement('h1');
   title.classList.add('titleDetail');
   title.innerText = `${objectData.name}`;
+
+  // Add children to main detail view structure
   section.append(title, detailCard(imageUrl, objectData, type));
-  loader.remove();
 };
 export default Detail;

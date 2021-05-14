@@ -6,6 +6,7 @@ import cart from '../cart/cart';
 import DefaultView from '../../views/defaultview/defaultview';
 
 const main = () => {
+  // Main structure of the project
   const section = document.createElement('section');
   section.classList.add('section');
 
@@ -15,11 +16,16 @@ const main = () => {
   const mainSection = document.createElement('div');
   mainSection.classList.add('section__main');
 
+  // Project title
   const defaultTitle = document.createElement('h1');
   const defaultText = 'Welcome in wonderfull place for Programmers';
   defaultTitle.innerHTML = defaultText;
+
+  // Add default view
   mainSection.append(defaultTitle, DefaultView());
   section.append(emptySpace, mainSection);
+
+  // Add child components on custom "navigation event"
   document.addEventListener('navigation', (e) => {
     mainSection.innerHTML = '';
     const {

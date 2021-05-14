@@ -1,15 +1,16 @@
-import loaderComponent from '../loader/loader';
 import Detail from '../../views/details/details';
 
 const Card = (imageUrl, objectData, type) => {
+  // Create card structure
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add('card');
   cardWrapper.classList.add('card__custom');
 
+  // Create children
   const cardImage = new Image();
-
   cardImage.classList.add('card-img-top');
   cardImage.classList.add('card-img-top_custom');
+  cardImage.src = imageUrl;
 
   const textWrapper = document.createElement('div');
   textWrapper.classList.add('card-body');
@@ -18,17 +19,19 @@ const Card = (imageUrl, objectData, type) => {
   paragraph.classList.add('card-text');
   paragraph.innerText = objectData.name;
 
-  textWrapper.append(paragraph);
   const button = document.createElement('button');
   button.classList.add('button');
   button.innerText = 'Show more';
+
+  // Add event listeners
   button.addEventListener('click', () => {
     const section = document.querySelector('.section__main');
     section.innerHTML = '';
-    section.append(loaderComponent());
     Detail(section, objectData, imageUrl, type);
   });
-  cardImage.src = imageUrl;
+
+  // Add children to structure
+  textWrapper.append(paragraph);
   cardImage.onload = () => {
     cardWrapper.append(cardImage, textWrapper, button);
   };

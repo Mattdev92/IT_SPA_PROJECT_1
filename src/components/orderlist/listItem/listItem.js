@@ -8,6 +8,7 @@ const LiItem = (sum, itemsInCart, id, i, sumInfo, wrapper, name) => {
       const span = document.createElement('span');
       const removeButton = document.createElement('button');
       const quantity = document.createElement('input');
+      const orderWrapper = document.querySelector('.orderWrapper');
       li.classList.add(
         'list-group-item',
         'd-flex',
@@ -28,6 +29,9 @@ const LiItem = (sum, itemsInCart, id, i, sumInfo, wrapper, name) => {
         li.remove();
         localStorage.removeItem(`${name}:${id}`);
         sumInfo.innerText = `Total sum of your cart ${sum} PLN`;
+        if (Object.keys(localStorage).length === 0) {
+          orderWrapper.remove();
+        }
       });
       quantity.addEventListener('change', () => {
         itemsInCart[i] = data.price * quantity.value;

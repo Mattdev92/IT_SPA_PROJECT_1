@@ -20,6 +20,7 @@ const OrderList = (keys) => {
 
   // Date
   const dateWrapper = document.createElement('div');
+  dateWrapper.classList.add('dateWrapper');
   Date(dateWrapper);
 
   // Description for Lists
