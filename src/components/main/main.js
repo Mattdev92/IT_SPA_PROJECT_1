@@ -2,7 +2,7 @@ import login from '../../views/login/login';
 import treatments from '../../views/treatments/treatments';
 import rooms from '../../views/rooms/rooms';
 import register from '../../views/register/register';
-import cart from '../cart/cart';
+import cart from '../../views/cart/cart';
 import DefaultView from '../../views/defaultview/defaultview';
 
 const main = () => {
@@ -25,7 +25,7 @@ const main = () => {
   mainSection.append(defaultTitle, DefaultView());
   section.append(emptySpace, mainSection);
 
-  // Add child components on custom "navigation event"
+  // Add child components depends on custom "navigation event"
   document.addEventListener('navigation', (e) => {
     mainSection.innerHTML = '';
     const {

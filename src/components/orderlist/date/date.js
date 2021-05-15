@@ -1,4 +1,5 @@
 const MyDate = (dateWrapper) => {
+  // Get totay date and convert to proper format
   const myDate = new Date(Date.now());
   const thisYear = myDate.getUTCFullYear();
   let thisDay = myDate.getUTCDate();
@@ -10,13 +11,23 @@ const MyDate = (dateWrapper) => {
     thisDay = `0${thisDay}`;
   }
 
+  // Create date component structure
   dateWrapper.classList.add('dateWrapper');
   const dateStartInput = document.createElement('input');
   const dateEndInput = document.createElement('input');
+
+  // Set start and end date according to requirememnts
   dateStartInput.setAttribute('type', 'date');
   dateStartInput.setAttribute('min', `${thisYear}-${thisMonth}-${thisDay}`);
   dateStartInput.setAttribute('value', `${thisYear}-${thisMonth}-${thisDay}`);
   dateStartInput.setAttribute('max', `${thisYear + 1}-${thisMonth}-${thisDay}`);
+
+  dateEndInput.setAttribute('type', 'date');
+  dateEndInput.setAttribute('min', `${dateStartInput.value}`);
+  dateEndInput.setAttribute('value', `${dateStartInput.value}`);
+  dateEndInput.setAttribute('max', `${thisYear + 1}-${thisMonth}-${thisDay}`);
+
+  // Add event listeners
   dateStartInput.addEventListener('change', () => {
     dateEndInput.setAttribute('min', `${dateStartInput.value}`);
     dateEndInput.setAttribute('value', `${dateStartInput.value}`);
@@ -24,13 +35,9 @@ const MyDate = (dateWrapper) => {
       'max',
       `${thisYear + 1}-${dateStartInput.value.slice(5)}`
     );
-    console.log(`${thisYear + 1}-${dateStartInput.value.slice(5)}`);
   });
-  dateEndInput.setAttribute('type', 'date');
-  dateEndInput.setAttribute('min', `${dateStartInput.value}`);
-  dateEndInput.setAttribute('value', `${dateStartInput.value}`);
-  dateEndInput.setAttribute('max', `${thisYear + 1}-${thisMonth}-${thisDay}`);
 
+  // Add children to date component structure
   dateWrapper.append(
     `Please provide your visit start date`,
     dateStartInput,

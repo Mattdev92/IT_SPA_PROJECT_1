@@ -1,3 +1,5 @@
+import { keys } from '../../../helperFunctions/localStorage';
+
 const cartView = (cartSummary) => {
   // Create cart view structure
   cartSummary.classList.add('cartSummary');
@@ -7,8 +9,7 @@ const cartView = (cartSummary) => {
   list.classList.add('list-group');
 
   // Create list from localStorage
-  const keys = Object.keys(localStorage);
-  keys.forEach((item) => {
+  keys().forEach((item) => {
     const itemInCourt = localStorage.getItem(item);
     const li = document.createElement('li');
     li.classList.add('list-group-item');

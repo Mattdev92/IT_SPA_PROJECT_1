@@ -22,7 +22,7 @@ const navigation = () => {
   const navigationElements = ['treatments', 'rooms'];
   const cartSummary = document.createElement('div');
 
-  // Add event listeners
+  // Add event listeners on navigation elements
   logo.addEventListener('click', () => {
     const top = document.querySelector('body');
     top.scrollIntoView({

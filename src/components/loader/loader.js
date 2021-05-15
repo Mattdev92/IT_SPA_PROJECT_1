@@ -18,7 +18,7 @@ const loaderComponent = (prop) => {
   const span = document.createElement('span');
   span.classList.add('visually-hidden');
 
-  // Add children
+  // Add children to loader structure
   spinner.append(span);
   loader.append(spinner);
   return loader;

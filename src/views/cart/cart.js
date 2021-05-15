@@ -1,15 +1,18 @@
-import OrderList from '../orderlist/orderlist';
+import orderList from '../../components/orderlist/orderlist';
 import cartEmpty from '../../assets/cartEmpty.png';
+import { keys } from '../../helperFunctions/localStorage';
 
 const cart = () => {
+  // Create cart structure
   const cartComponent = document.createElement('div');
   cartComponent.classList.add('cartWrapper');
-  const keys = Object.keys(localStorage);
+
+  // Create default cart view in some conditions
   const cartTitle = document.createElement('span');
   const titleEmpty = document.createElement('span');
   cartTitle.innerText = 'Summary of reservation';
   const cartImage = new Image();
-  if (keys.length !== 0) {
+  if (keys().length !== 0) {
     cartImage.remove();
     titleEmpty.remove();
     cartComponent.append(cartTitle);
@@ -19,8 +22,12 @@ const cart = () => {
     cartImage.src = cartEmpty;
     cartComponent.append(cartTitle, titleEmpty, cartImage);
   }
+
+  // Add children to cart structure
   cartComponent.append(cartTitle, titleEmpty, cartImage);
-  cartComponent.append(OrderList(keys));
+  cartComponent.append(orderList());
+
+  // Scroll to main section
   const scrollTo = document.querySelector('.section__main');
   scrollTo.scrollIntoView({
     behavior: 'smooth',

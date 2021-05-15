@@ -30,7 +30,7 @@ const Card = (imageUrl, objectData, type) => {
     Detail(section, objectData, imageUrl, type);
   });
 
-  // Add children to structure
+  // Add children to structure on image load
   textWrapper.append(paragraph);
   cardImage.onload = () => {
     cardWrapper.append(cardImage, textWrapper, button);

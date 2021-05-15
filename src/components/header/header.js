@@ -1,4 +1,5 @@
 const header = () => {
+  // Create header structure
   const headerComponent = document.createElement('header');
   const title = document.createElement('h1');
   const text = 'SPA for Programmers';

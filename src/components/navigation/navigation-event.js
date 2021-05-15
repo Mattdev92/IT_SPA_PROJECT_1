@@ -1,3 +1,4 @@
+// Custom event
 const createNavigationEvent = (view) =>
   new CustomEvent('navigation', {
     detail: {

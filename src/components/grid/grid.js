@@ -3,7 +3,7 @@ import loaderComponent from '../loader/loader';
 import card from '../card/card';
 
 const grid = (imageTab, name) => {
-  // Create main grid structure
+  // Create grid structure
   const wrapper = document.createElement('div');
   wrapper.classList.add('grid');
 
@@ -11,6 +11,7 @@ const grid = (imageTab, name) => {
   title.classList.add('sectionView_title');
   title.innerText = `Available ${name}`;
 
+  // Modify nav styles
   const nav = document.querySelector('.nav');
   nav.classList.add('nav__sectionView');
 
