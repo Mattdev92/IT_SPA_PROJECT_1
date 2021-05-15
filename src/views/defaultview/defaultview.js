@@ -12,6 +12,8 @@ const DefaultView = function () {
   descriptionPlace.classList.add('mainWrapper__descriptionPlace');
   descriptionPlace.innerText = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta minima deleniti explicabo debitis modi magnam at voluptas. Earum cumque quaerat deserunt tempore fuga assumenda obcaecati, suscipit excepturi aut facere
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta minima deleniti explicabo debitis modi magnam at voluptas. Earum cumque quaerat deserunt tempore fuga assumenda obcaecati, suscipit excepturi aut facere
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta minima deleniti explicabo debitis modi magnam at voluptas. Earum cumque quaerat deserunt tempore fuga assumenda obcaecati, suscipit excepturi aut facere. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta minima deleniti explicabo debitis modi magnam at voluptas. Earum cumque quaerat deserunt tempore fuga assumenda obcaecati, suscipit excepturi aut facere
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta minima deleniti explicabo debitis modi magnam at voluptas. Earum cumque quaerat deserunt tempore fuga assumenda obcaecati, suscipit excepturi aut facere
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta minima deleniti explicabo debitis modi magnam at voluptas. Earum cumque quaerat deserunt tempore fuga assumenda obcaecati, suscipit excepturi aut facere`;
   const mainImage = new Image();
   mainImage.src = SPA;

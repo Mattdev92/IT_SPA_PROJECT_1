@@ -19,6 +19,7 @@ const main = () => {
   // Project title
   const defaultTitle = document.createElement('h1');
   const defaultText = 'Welcome in wonderfull place for Programmers';
+  defaultTitle.classList.add('defaultTitle');
   defaultTitle.innerHTML = defaultText;
 
   // Add default view
