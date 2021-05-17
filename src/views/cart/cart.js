@@ -16,6 +16,7 @@ const cart = () => {
   const titleEmpty = document.createElement('span');
   cartTitle.innerText = 'Summary of reservation';
   const cartImage = new Image();
+  cartImage.classList.add('cartEmptyImage');
   if (keys().length !== 0) {
     cartImage.remove();
     titleEmpty.remove();
