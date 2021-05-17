@@ -1,6 +1,6 @@
 # IT
 
-It's the first project which I have to prepare for my postgraduate study about frontend technologies. this project was prepare using vanilla js without any js framework. For styling I used a little o bootstrap with cutom scss styling.
+It's the first project which I have to prepare for my postgraduate studies about frontend technologies. This project was prepare using vanilla js without any js framework. For styling I used a little o bootstrap with cutom scss styling.
 
 Implemented solutions
 
