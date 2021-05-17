@@ -38,7 +38,11 @@ const item = (sum, itemsInCart, id, i, sumInfo, wrapper, name, data) => {
     sumInfo.innerText = `Total sum of your cart ${sum} PLN`;
     if (keys().length === 0) {
       const orderWrapper = document.querySelector('.orderWrapper');
-      orderWrapper.remove();
+      const emptyTitle = document.createElement('h1');
+      emptyTitle.innerText = 'Your cart is empty';
+      emptyTitle.classList.add('orderWrapper__emptyTitle');
+      orderWrapper.innerHTML = '';
+      orderWrapper.appendChild(emptyTitle);
     }
   });
 

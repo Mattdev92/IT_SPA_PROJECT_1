@@ -3,6 +3,10 @@ import cartEmpty from '../../assets/cartEmpty.png';
 import { keys } from '../../helperFunctions/localStorage';
 
 const cart = () => {
+  // remove Nav class
+  const nav = document.querySelector('.nav');
+  nav.classList.remove('nav__sectionView');
+
   // Create cart structure
   const cartComponent = document.createElement('div');
   cartComponent.classList.add('cartWrapper');

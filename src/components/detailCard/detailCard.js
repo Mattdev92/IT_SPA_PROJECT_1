@@ -1,4 +1,8 @@
 const detailCard = (imageUrl, objectData, type) => {
+  // remove Nav class
+  const nav = document.querySelector('.nav');
+  nav.classList.remove('nav__sectionView');
+
   // Create detail Card structure
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add('card');
