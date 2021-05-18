@@ -1,5 +1,6 @@
 import Logo from '../../assets/logo.png';
 import Cart from '../../assets/cart.png';
+import Register from '../../assets/register.png';
 import createNavigationEvent from './navigation-event';
 import cartView from './cartViev/cartView';
 
@@ -18,6 +19,10 @@ const navigation = () => {
   const cart = new Image();
   cart.src = Cart;
   cart.classList.add('cart');
+
+  const register = new Image();
+  register.src = Register;
+  register.classList.add('register');
 
   const navigationElements = ['treatments', 'rooms'];
   const cartSummary = document.createElement('div');
@@ -46,6 +51,10 @@ const navigation = () => {
     nav.append(cartView(cartSummary));
   });
 
+  register.addEventListener('click', () => {
+    document.dispatchEvent(createNavigationEvent('register'));
+  });
+
   cart.addEventListener('mouseleave', () => {
     cartSummary.innerText = '';
     nav.removeChild(cartSummary);
@@ -58,7 +67,7 @@ const navigation = () => {
     liElement.innerHTML = item;
     ul.append(liElement);
   });
-  nav.append(logo, ul, cart);
+  nav.append(logo, ul, cart, register);
   return nav;
 };
 export default navigation;

@@ -1,6 +1,17 @@
-# IT
+# IT SPA
 
-It's the first project which I have to prepare for my postgraduate studies about frontend technologies. This project was prepare using vanilla js without any js framework. For styling I used a little o bootstrap with cutom scss styling.
+It's the first project which I will prepare for my postgraduate studies about frontend technologies. This project was prepared using vanilla js without any js framework. For styling I used a little o bootstrap with cutom scss styling.
+
+## How it works
+
+Used technologies:
+ 1. Vanilla js without any framework
+ 2. scss and bootstrap for styling
+ 3. json server as database
+ 4. axios for data fetching
+ 5. uuid for id generating
+ 6. webpack and babel as a bindler and transpiler
+ 7. prettire and eslint for static code anlizing
 
 Implemented solutions
 
@@ -16,31 +27,21 @@ Implemented solutions
  4. Carousel on main page
  5. Responsive views for mobiles, tablets and laptops
  6. Real time fetching data from json.server
+ 7. Register and login funcionality
 
-## How to start the application
+## Getting Started
 1. git clone 
 2. npm install
 3. npm run start:dev - run the project
 4. json-server database.json
 
-After finishing this comments you can display webpage on your device
-
-## How it works
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-The only thing to run application is to instal node modules by typing "npm install" in console. Then start application by typing "npm start" in console.
+After finishing this orders you can display webpage on your device
 
 ### How did I create this project?
 
-What things you need to install  and how to install them
-
 Project was prepared based on my own vanilla js template with custom webpack configuration
 
-## Test
+## Plan for future dvelopment
 Unit tests in progress...
 
 ## Prettier and Eslint configuration
