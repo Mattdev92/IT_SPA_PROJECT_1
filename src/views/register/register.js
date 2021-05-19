@@ -1,5 +1,6 @@
 import axios from 'axios';
 import createNavigationEvent from '../../components/navigation/navigation-event';
+import { empty, equalPassword, passwordLength, emailValidation } from './check';
 
 const uuidv4 = require('uuid/v4');
 
@@ -48,21 +49,24 @@ const register = function () {
   name.classList.add('form-control');
   name.setAttribute('required', 'true');
 
-  const number = document.createElement('input');
-  number.classList.add('form-control');
-  number.setAttribute('required', 'true');
+  const email = document.createElement('input');
+  email.classList.add('form-control');
+  email.setAttribute('required', 'true');
+  email.setAttribute('type', 'email');
 
   const password = document.createElement('input');
   password.classList.add('form-control');
   password.setAttribute('required', 'true');
+  password.setAttribute('type', 'password');
 
   const repeatedPassword = document.createElement('input');
   repeatedPassword.classList.add('form-control');
   repeatedPassword.setAttribute('required', 'true');
+  repeatedPassword.setAttribute('type', 'password');
 
   const registerButton = document.createElement('button');
   registerButton.classList.add('btnSubmit');
-  registerButton.setAttribute('type', 'button');
+  registerButton.setAttribute('type', 'submit');
   registerButton.innerText = 'Register';
 
   const logInButton = document.createElement('button');
@@ -76,10 +80,10 @@ const register = function () {
 
   // Create structure
   const groupTab = [formGroup1, formGroup2, formGroup3, formGroup4];
-  const inputTab = [name, number, password, repeatedPassword];
+  const inputTab = [name, email, password, repeatedPassword];
   const placeholderTab = [
     'Your name *',
-    'Phone Number *',
+    'Your Email *',
     'Your Password *',
     'Confirm Password *',
   ];
@@ -94,10 +98,16 @@ const register = function () {
   formContent.append(row, registerButton, logInButton);
   form.append(formContent);
   container.append(form);
-  const ipnutNames = ['name', 'number', 'password', 'repeatedPassword'];
+
+  // Registration functonality - set actual input values
+  const errorTitle = document.createElement('h2');
+  errorTitle.innerText = 'Please fill all the fields';
+  errorTitle.classList.add('errorTitle');
+  row.append(errorTitle);
+  const ipnutNames = ['name', 'email', 'password', 'repeatedPassword'];
   const actualValues = {
     name: '',
-    number: '',
+    email: '',
     password: '',
     repeatedPassword: '',
   };
@@ -107,14 +117,27 @@ const register = function () {
       console.log(actualValues);
     })
   );
-  registerButton.addEventListener('click', () => {
-    if (actualValues.password === actualValues.repeatedPassword) {
+
+  // Add event listeners
+  registerButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (
+      empty(
+        actualValues.password,
+        actualValues.name,
+        actualValues.repeatedPassword,
+        actualValues.email
+      ) &&
+      emailValidation(actualValues.email) &&
+      equalPassword(actualValues.password, actualValues.repeatedPassword) &&
+      passwordLength(actualValues.password)
+    ) {
       axios({
         method: 'post',
         url: 'http://localhost:3000/users/',
         data: {
           name: actualValues.name,
-          number: actualValues.number,
+          email: actualValues.email,
           password: actualValues.password,
           id: uuidv4(),
         },
@@ -127,10 +150,10 @@ const register = function () {
       congratTitle.innerText = 'Congratulation ! You are registered';
       wrapper.append(congratTitle, logInButton);
       container.append(wrapper);
-    } else {
-      alert(`password doensn't match`, logInButton);
     }
   });
+
+  // Scroll to register view in main section
   const scrollTo = document.querySelector('.section__main');
   scrollTo.scrollIntoView({
     behavior: 'smooth',
