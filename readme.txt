@@ -46,6 +46,7 @@ Implemented solutions
   - password equility
  10. Quick cart summarize of ordered products
  11. Smooth scrolling to choosen view
+ 23. Responsive SPA app for mobiles, laptop and desktops.
 
 Project architecture
 Project is diveded on a few categories:

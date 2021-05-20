@@ -1,6 +1,7 @@
 import axios from 'axios';
 import User from '../../assets/user.png';
 import { empty } from '../../helperFunctions/check';
+import createNavigationEvent from '../../components/navigation/navigation-event';
 
 const login = function () {
   // Create elements
@@ -36,6 +37,7 @@ const login = function () {
 
   const password = document.createElement('input');
   password.classList.add('form-control');
+  password.setAttribute('type', 'password');
 
   const logInButton = document.createElement('button');
   logInButton.classList.add('logIn');
@@ -83,14 +85,13 @@ const login = function () {
             ) {
               const loginAvatar = document.querySelector('.register');
               loginAvatar.src = User;
-              const wrapper = document.createElement('div');
-              wrapper.classList.add('congratWrapper');
-              container.innerText = '';
-              const congratTitle = document.createElement('h1');
-              congratTitle.classList.add('congratTitle');
-              congratTitle.innerText = 'Congratulation ! You are loged-in';
-              wrapper.append(congratTitle);
-              container.append(wrapper);
+              loginAvatar.addEventListener('onMouseOver');
+              const top = document.querySelector('body');
+              top.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+              document.dispatchEvent(createNavigationEvent('defaultview'));
             }
             errorTitle.innerText = `Something is wrong. Check user name or password`;
           });
