@@ -5,6 +5,7 @@ import {
   equalPassword,
   passwordLength,
   emailValidation,
+  // emailExist,
 } from '../../helperFunctions/check';
 
 const uuidv4 = require('uuid/v4');
@@ -119,7 +120,6 @@ const register = function () {
   inputTab.forEach((item, i) =>
     item.addEventListener('change', (e) => {
       actualValues[`${ipnutNames[i]}`] = e.target.value;
-      console.log(actualValues);
     })
   );
 
@@ -136,6 +136,7 @@ const register = function () {
       emailValidation(actualValues.email) &&
       equalPassword(actualValues.password, actualValues.repeatedPassword) &&
       passwordLength(actualValues.password)
+      // emailExist(actualValues.email)
     ) {
       axios({
         method: 'post',

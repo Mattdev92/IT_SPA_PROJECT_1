@@ -52,7 +52,7 @@ const main = () => {
         mainSection.append(defaultTitle, DefaultView());
         break;
       default:
-        mainSection.append('Cos poszlo nie tak');
+        mainSection.append('Something go wrong');
     }
   });
   return section;

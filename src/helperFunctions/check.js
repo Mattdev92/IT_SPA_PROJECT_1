@@ -1,3 +1,5 @@
+// import axios from 'axios';
+
 export const equalPassword = (password, repeatedPassword) => {
   if (password === repeatedPassword) {
     return true;
@@ -43,3 +45,20 @@ export const emailValidation = (email) => {
   errorTitle.innerText = 'Not proper email structure';
   return false;
 };
+
+// export const emailExist = (email = '') => {
+//   if (email !== '') {
+//     axios.get('http://localhost:3000/users/').then(({ data }) => {
+//       let desontexist = true;
+//       data.forEach((item) => {
+//         if (item.email === email) {
+//           desontexist = false;
+//           const errorTitle = document.querySelector('.errorTitle');
+//           errorTitle.innerText = 'Email already exist';
+//           console.log(desontexist);
+//         }
+//       });
+//     });
+//   }
+//   return false;
+// };
