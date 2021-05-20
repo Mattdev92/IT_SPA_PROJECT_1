@@ -16,7 +16,12 @@ export const passwordLength = (password) => {
   return false;
 };
 
-export const empty = (password, name, repeatedPassword, email) => {
+export const empty = (
+  password = '',
+  name = '',
+  repeatedPassword = 'none',
+  email = 'none'
+) => {
   if (
     password === '' ||
     name === '' ||

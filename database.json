@@ -122,6 +122,18 @@
       "email": "sdsd@dsfs",
       "password": "121212",
       "id": "932b1bed-fbec-4dab-8d46-4bdb2869833f"
+    },
+    {
+      "name": "Mateusz Grzejszczyk",
+      "email": "mateuszgrzejszczyk1@gmail.com",
+      "password": "123123",
+      "id": "11866b33-b06c-4e55-9c13-4bebc7357ff6"
+    },
+    {
+      "name": "asd",
+      "email": "asdsa@asas",
+      "password": "§1§1§1",
+      "id": "22da729d-0c08-4ef1-8422-dcfa3cea4bde"
     }
   ],
   "rooms": [

@@ -1,6 +1,11 @@
 import axios from 'axios';
 import createNavigationEvent from '../../components/navigation/navigation-event';
-import { empty, equalPassword, passwordLength, emailValidation } from './check';
+import {
+  empty,
+  equalPassword,
+  passwordLength,
+  emailValidation,
+} from '../../helperFunctions/check';
 
 const uuidv4 = require('uuid/v4');
 

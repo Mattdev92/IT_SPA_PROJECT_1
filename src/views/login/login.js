@@ -1,5 +1,6 @@
 import axios from 'axios';
 import User from '../../assets/user.png';
+import { empty } from '../../helperFunctions/check';
 
 const login = function () {
   // Create elements
@@ -20,12 +21,6 @@ const login = function () {
 
   const formContent = document.createElement('div');
   formContent.classList.add('form-content', 'custom-content');
-
-  const row = document.createElement('row');
-  row.classList.add('row');
-
-  const colMD = document.createElement('div');
-  colMD.classList.add('col-md-6');
 
   const formGroup1 = document.createElement('div');
   formGroup1.classList.add('form-group');
@@ -56,7 +51,10 @@ const login = function () {
     inputTab[i].setAttribute('value', '');
     groupTab[i].append(inputTab[i]);
   });
-  formContent.append(formGroup1, formGroup2, logInButton);
+  const errorTitle = document.createElement('h2');
+  errorTitle.innerText = 'Please fill all the fields';
+  errorTitle.classList.add('errorTitle');
+  formContent.append(formGroup1, formGroup2, errorTitle, logInButton);
   form.append(formContent);
   container.append(form);
   const ipnutNames = ['name', 'password'];
@@ -64,27 +62,41 @@ const login = function () {
     name: '',
     password: '',
   };
+
+  // Event listeners
   inputTab.forEach((item, i) =>
     item.addEventListener('change', (e) => {
       actualValues[`${ipnutNames[i]}`] = e.target.value;
       console.log(actualValues);
     })
   );
-  logInButton.addEventListener('click', () => {
-    axios
-      .get('http://localhost:3000/users')
-      .then(({ data }) => {
-        data.forEach((item) => {
-          if (
-            item.name === actualValues.name &&
-            item.password === actualValues.password
-          ) {
-            const loginAvatar = document.querySelector('.register');
-            loginAvatar.src = User;
-          }
-        });
-      })
-      .catch((error) => console.log(error));
+  logInButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (empty(actualValues.name, actualValues.password)) {
+      axios
+        .get('http://localhost:3000/users')
+        .then(({ data }) => {
+          data.forEach((item) => {
+            if (
+              item.name === actualValues.name &&
+              item.password === actualValues.password
+            ) {
+              const loginAvatar = document.querySelector('.register');
+              loginAvatar.src = User;
+              const wrapper = document.createElement('div');
+              wrapper.classList.add('congratWrapper');
+              container.innerText = '';
+              const congratTitle = document.createElement('h1');
+              congratTitle.classList.add('congratTitle');
+              congratTitle.innerText = 'Congratulation ! You are loged-in';
+              wrapper.append(congratTitle);
+              container.append(wrapper);
+            }
+            errorTitle.innerText = `Something is wrong. Check user name or password`;
+          });
+        })
+        .catch((error) => console.log(error));
+    }
   });
   return container;
 };
