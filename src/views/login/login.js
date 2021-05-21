@@ -46,7 +46,7 @@ const login = function () {
 
   // Create structure
   const groupTab = [formGroup1, formGroup2];
-  const inputTab = [name, number, password];
+  const inputTab = [name, password];
   const placeholderTab = ['Your name *', 'Password'];
   placeholderTab.forEach((item, i) => {
     inputTab[i].setAttribute('placeholder', item);
@@ -69,7 +69,6 @@ const login = function () {
   inputTab.forEach((item, i) =>
     item.addEventListener('change', (e) => {
       actualValues[`${ipnutNames[i]}`] = e.target.value;
-      console.log(actualValues);
     })
   );
   logInButton.addEventListener('click', (e) => {
@@ -85,7 +84,7 @@ const login = function () {
             ) {
               const loginAvatar = document.querySelector('.register');
               loginAvatar.src = User;
-              loginAvatar.addEventListener('onMouseOver');
+              errorTitle.innerText = ``;
               const top = document.querySelector('body');
               top.scrollIntoView({
                 behavior: 'smooth',
