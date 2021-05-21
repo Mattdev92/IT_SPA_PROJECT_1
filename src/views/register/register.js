@@ -5,7 +5,7 @@ import {
   equalPassword,
   passwordLength,
   emailValidation,
-  // emailExist,
+  emailExist,
 } from '../../helperFunctions/check';
 
 const uuidv4 = require('uuid/v4');
@@ -124,7 +124,7 @@ const register = function () {
   );
 
   // Add event listeners
-  registerButton.addEventListener('click', (e) => {
+  registerButton.addEventListener('click', async (e) => {
     e.preventDefault();
     if (
       empty(
@@ -135,8 +135,8 @@ const register = function () {
       ) &&
       emailValidation(actualValues.email) &&
       equalPassword(actualValues.password, actualValues.repeatedPassword) &&
-      passwordLength(actualValues.password)
-      // emailExist(actualValues.email)
+      passwordLength(actualValues.password) &&
+      (await emailExist(actualValues.email))
     ) {
       axios({
         method: 'post',

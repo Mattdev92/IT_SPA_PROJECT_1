@@ -44,8 +44,10 @@ Implemented solutions
   - empty field validation
   - "@" symbol validation in email
   - password equality
+  - email has to be unique in database
  10. Quick cart summarize view of ordered products - on hover
  11. Smooth scrolling
+ 12. Loader
 
 Project architecture
 Project is diveded on a few categories - similar to modern technologies like React

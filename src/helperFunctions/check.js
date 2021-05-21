@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 export const equalPassword = (password, repeatedPassword) => {
   if (password === repeatedPassword) {
@@ -46,19 +46,21 @@ export const emailValidation = (email) => {
   return false;
 };
 
-// export const emailExist = (email = '') => {
-//   if (email !== '') {
-//     axios.get('http://localhost:3000/users/').then(({ data }) => {
-//       let desontexist = true;
-//       data.forEach((item) => {
-//         if (item.email === email) {
-//           desontexist = false;
-//           const errorTitle = document.querySelector('.errorTitle');
-//           errorTitle.innerText = 'Email already exist';
-//           console.log(desontexist);
-//         }
-//       });
-//     });
-//   }
-//   return false;
-// };
+export const emailExist = async (emaill) => {
+  if (emaill !== '') {
+    const { data } = await axios.get('http://localhost:3000/users/');
+    console.log(data);
+    let desontexist = true;
+    data.forEach((item) => {
+      console.log(item.email);
+      if (item.email === emaill) {
+        desontexist = false;
+        const errorTitle = document.querySelector('.errorTitle');
+        errorTitle.innerText = 'Email already exist';
+        console.log(desontexist);
+      }
+    });
+    return desontexist;
+  }
+  return false;
+};
