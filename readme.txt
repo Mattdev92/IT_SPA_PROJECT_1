@@ -4,6 +4,7 @@ It's the first diploma project which I will prepare for my postgraduate studies 
 
 ## How it works
 ![](SPA.gif)
+
 ## Getting Started
 1. git clone 
 2. npm install
