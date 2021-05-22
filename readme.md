@@ -50,15 +50,16 @@ Implemented solutions
  11. Smooth scrolling
  12. Loader
 
-Project architecture
+### Project architecture
+
 Project is diveded on a few categories - similar to modern technologies like React
-1.assets - all images
-2.components - smaller parts of code that build all views and main page components like navigation, footer etc.
-3.css - all styles
-4.views - all views that you can switch in navigation component  
-5.helper functions - all functions that are universal and you can use in any part of project
-6.root files: index.js, index.html
-7.configuration files: eslint, gitigore, package.json etc.
+ 1. assets - all images
+ 2. components - smaller parts of code that build all views and main page components like navigation, footer etc.
+ 3. css - all styles
+ 4. views - all views that you can switch in navigation component  
+ 5. helper functions - all functions that are universal and you can use in any part of project
+ 6. root files: index.js, index.html
+ 7. configuration files: eslint, gitigore, package.json etc.
 
 ### How did I create this project?
 
