@@ -1,6 +1,6 @@
 # IT SPA
 
-It's the first diploma project which I will prepare for my postgraduate studies "frontend with React". This project was prepared using vanilla js without any js framework. For styling I used a little of a bootstrap with custom scss styling. Even I used pure js I tried to be quite close to modern frontend technologies so I tried to write as much as I can in vanilla js / minimazing HTML. Structure of the project is similar to React projects deiveded on components.
+It's the first diploma project which I will prepare for my postgraduate studies "frontend with React". This project was prepared using vanilla js without any js framework. For styling I used a little of a bootstrap with custom scss styling. Even I used pure js I tried to be quite close to modern frontend technologies so I tried to write as much as I can in vanilla js / minimazing HTML. Structure of the project is similar to React projects divided on components.
 
 ## How it works
 ![](spaIT.gif)
